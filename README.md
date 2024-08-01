@@ -4,7 +4,7 @@ Valheim server container with autopause functionality, to save power and cpu tim
 Inspired by https://github.com/itzg/docker-minecraft-server
 
 # Usage
-Example
+Command example
 ```
 $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e SERVER_NAME='my server' \
@@ -24,6 +24,38 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e MODIFIER_PORTALS=casual \
 -e NOMAPS=1 \
 --name valheim localhost/vhsrv:latest
+```
+Quadlet example
+/etc/containers/systemd/valheim.container
+```
+Description=Valheim Server Container
+
+[Container]
+ContainerName=valheim
+Image=localhost/vhsrv:latest
+Volume=valheim-server:/world
+-e SERVER_NAME='my server' \
+-e WORLD_NAME='my world' \
+-e PASSWORD='1234' \
+-e PUBLIC=0 \
+-e SAVE_INTERVAL=900 \
+-e BACKUPS=8 \
+-e BACKUP_SHORT=3600 \
+-e BACKUP_LONG=20000 \
+-e CROSSPLAY=0
+-e PRESET_DIFFICULTY=normal \
+-e MODIFIER_COMBAT=easy \
+-e MODIFIER_DEATHPENALTY=easy \
+-e MODIFIER_RESOURCES=less \
+-e MODIFIER_RAIDS=less \
+-e MODIFIER_PORTALS=casual \
+-e NOMAPS=1 \
+PublishPort=2456:2456/udp
+PublishPort=2457:2457/udp
+AddCapability=CAP_NET_RAW
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 | Name | Type | Default | Purpose |
