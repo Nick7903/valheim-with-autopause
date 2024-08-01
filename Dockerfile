@@ -11,6 +11,7 @@ WORKDIR /valheim
 
 COPY --chmod=750 start /
 COPY --chmod=750 autopause /autopause
+COPY --chmod=644 autopause/sudo-autopause /etc/sudoers.d
 
 EXPOSE 2456-2457/udp
 
