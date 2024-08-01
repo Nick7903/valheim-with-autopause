@@ -1,6 +1,6 @@
 FROM docker.io/opensuse/leap
 
-RUN zypper -n install -l steamcmd libatomic1 libpulse-devel libpulse0 knockd libcap-progs gawk iproute2
+RUN zypper -n install -l steamcmd libatomic1 libpulse-devel libpulse0 knockd libcap-progs gawk iproute2 sudo
 RUN setcap cap_net_raw=ep /usr/sbin/knockd
 
 COPY --chmod=644 autopause/sudo-autopause /etc/sudoers.d
