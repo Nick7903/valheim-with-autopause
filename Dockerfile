@@ -1,5 +1,7 @@
 FROM docker.io/opensuse/leap
 
+RUN zypper -n install -l steamcmd libatomic1 libpulse-devel libpulse0 knockd libcap-progs
+
 VOLUME ["/world"]
 
 WORKDIR /valheim
