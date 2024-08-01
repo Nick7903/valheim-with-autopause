@@ -22,8 +22,14 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e MODIFIER_PORTALS=casual
 -e SETKEY=passivemobs
 --name valheim localhost/vhsrv:latest
+
+
 | Name | Default | Purpose |
-| RE | RE |
+|----------|----------|-------|
+| `SERVER_NAME` | `My Server` | Name that will be shown in the server browser |
+
+
+
 SERVER_NAME            :  string   :  name of server shown in server browser if public  :  default: none         :  required
 WORLD_NAME             :  string   :  name of world                                     :  default: 'Dedicated'  :  optional
 PASSWORD               :  string   :  password to server                                :  default: none         :  optional
