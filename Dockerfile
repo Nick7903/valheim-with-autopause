@@ -1,6 +1,7 @@
 FROM docker.io/opensuse/leap
 
 RUN zypper -n install -l steamcmd libatomic1 libpulse-devel libpulse0 knockd libcap-progs
+RUN setcap cap_net_raw=ep /usr/sbin/knockd
 
 VOLUME ["/world"]
 
