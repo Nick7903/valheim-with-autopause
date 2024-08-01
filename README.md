@@ -26,7 +26,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 
 | Name | Type | Default | Purpose | req/opt |
 |----------|----------|-------|---|--|
-| `SERVER_NAME` | `string` | none | name of server shown in server browser if public | required |
+| `SERVER_NAME` | `string` | none | name of server shown in server browser if public | `required` |
 
 
 
