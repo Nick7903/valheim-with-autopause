@@ -9,6 +9,6 @@ export templdpath=$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH
 export SteamAppId=892970
 
-./valheim_server.x86_64 -name "Klinge og venner" -port 2456 -world "Dedicated" -password "klingenberg" -savedir /valheim/world -saveinterval 900
+./valheim_server.x86_64 -name "" -port 2456 -world "Dedicated" -password "" -savedir /valheim/world -saveinterval 900
 
 export LD_LIBRARY_PATH=$templdpath
