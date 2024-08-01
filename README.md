@@ -23,7 +23,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e MODIFIER_RAIDS=less \
 -e MODIFIER_PORTALS=casual \
 -e NOMAPS=1 \
---name valheim localhost/vhsrv:latest
+--name valheim localhost/vhsrv:latest --cap-add=CAP_NET_RAW
 ```
 Quadlet example  
 /etc/containers/systemd/valheim.container
