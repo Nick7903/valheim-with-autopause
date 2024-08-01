@@ -30,7 +30,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 | `WORLD_NAME` | `string` | 'Dedicated' | name of world | `optional` |
 | `PASSWORD` | `string` | | password to server | `optional` |
 | `PUBLIC` | `boolean` | TRUE | if set, the server will show up in server browser | `optional` |
-| `SAVE_INTERVAL` | 
+| `SAVE_INTERVAL` | `integer`seconds | 1800 | time between saves
 | `BACKUPS` | 
 | `BACKUP_SHORT` |   
 | `BACKUP_LONG` |   
