@@ -1,7 +1,10 @@
 #!/bin/bash
 set -x
 
-server_args='-name '$name' -world '$world
+umask 0023
+steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
+
+server_args=''
 if [ $PASSWORD ]; then server_args+=' -password '$PASSWORD ; fi
 if [ $PUBLIC ]; then server_args+=' -public '$PUBLIC ; fi
 if [ $SAVE_INTERVAL ]; then server_args+=' -saveinterval '$SAVE_INTERVAL ; fi
@@ -18,10 +21,8 @@ if [ $MODIFIER_PORTALS ]; then server_args+=' -modifier portals '$MODIFIER_PORTA
 if [ $NOBUILDCOST ]; then server_args+=' -setkey nobuildcost ' ; fi
 if [ $PLAYEREVENTS ]; then server_args+=' -setkey playerevents ' ; fi
 if [ $PASSIVEMOBS ]; then server_args+=' -setkey passivemobs ' ; fi
-if [ $NOMAP ]; then server_args+=' -password nomaps ' ; fi
+if [ $NOMAP ]; then server_args+=' -setkey nomap ' ; fi
 
-umask 0023
-steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
 
 /autopause/autopause-daemon.sh &
 
@@ -32,6 +33,6 @@ export templdpath=$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH
 export SteamAppId=892970
 
-./valheim_server.x86_64 -name "" -port 2456 -world "Dedicated" -password "" -savedir /world -saveinterval 900
+./valheim_server.x86_64 -savedir /world -name $SERVER_NAME -world $WORLD_NAME $server_args  
 
 export LD_LIBRARY_PATH=$templdpath
