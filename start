@@ -2,8 +2,23 @@
 umask 0023
 
 server_args='-name '$name' -world '$world
-if [ $PASSWORD ]; then server_args+='-password '$PASSWORD ; fi 
-
+if [ $PASSWORD ]; then server_args+=' -password '$PASSWORD ; fi
+if [ $PUBLIC ]; then server_args+=' -public '$PUBLIC ; fi
+if [ $SAVE_INTERVAL ]; then server_args+=' -saveinterval '$SAVE_INTERVAL ; fi
+if [ $BACKUPS ]; then server_args+=' -backups '$BACKUPS ; fi
+if [ $BACKUP_SHORT ]; then server_args+=' -backupshort '$BACKUP_SHORT ; fi
+if [ $BACKUP_LONG ]; then server_args+=' -backuplong '$BACKUP_LONG ; fi
+if [ $CROSSPLAY ]; then server_args+=' -crossplay '$CROSSPLAY ; fi
+if [ $PRESET_DIFFICULTY ]; then server_args+=' -preset '$PRESET_DIFFICULTY ; fi
+if [ $MODIFIER_COMBAT ]; then server_args+=' -modifier combat '$MODIFIER_COMBAT ; fi
+if [ $MODIFIER_DEATHPENALTY ]; then server_args+=' -modifier deathpenalty '$MODIFIER_DEATHPENALTY ; fi
+if [ $MODIFIER_RESOURCES ]; then server_args+=' -modifier resources '$MODIFIER_RESOURCES ; fi
+if [ $MODIFIER_RAIDS ]; then server_args+=' -modifier raids '$MODIFIER_RAIDS ; fi
+if [ $MODIFIER_PORTALS ]; then server_args+=' -modifier portals '$MODIFIER_PORTALS ; fi
+if [ $NOBUILDCOST ]; then server_args+=' -setkey nobuildcost ' ; fi
+if [ $PLAYEREVENTS ]; then server_args+=' -setkey playerevents ' ; fi
+if [ $PASSIVEMOBS ]; then server_args+=' -setkey passivemobs ' ; fi
+if [ $NOMAP ]; then server_args+=' -password nomaps ' ; fi
 
 steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
 
