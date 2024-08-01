@@ -33,6 +33,6 @@ export templdpath=$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH
 export SteamAppId=892970
 
-/valheim/valheim_server.x86_64 -savedir /world -name $SERVER_NAME -world $WORLD_NAME $server_args  
+./valheim_server.x86_64 -savedir /world -name $SERVER_NAME -world $WORLD_NAME $server_args  
 
 export LD_LIBRARY_PATH=$templdpath
