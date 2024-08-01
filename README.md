@@ -25,7 +25,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 
 
 | Name | Type | Default | Purpose |
-|---|---|---|---|---|
+|---|---|---|---|
 | `SERVER_NAME` | `str` | | name of server shown in server browser if public |
 | `WORLD_NAME` | `str` | 'Dedicated' | name of world |
 | `PASSWORD` | `str` | | password to server |
