@@ -1,1 +1,1 @@
-
+valheim ALL=(ALL) NOPASSWD:/usr/sbin/knockd
