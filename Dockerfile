@@ -15,8 +15,8 @@ VOLUME ["/world"]
 
 WORKDIR /valheim
 
-COPY --chown valheim:valheim --chmod=750 start /
-COPY --chown valheim:valheim --chmod=750 autopause /autopause
+COPY --chown=valheim:valheim --chmod=750 start /
+COPY --chown=valheim:valheim --chmod=750 autopause /autopause
 
 EXPOSE 2456-2457/udp
 
