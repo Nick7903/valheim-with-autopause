@@ -4,24 +4,25 @@ Valheim server container with autopause functionality, to save power and cpu tim
 Inspired by https://github.com/itzg/docker-minecraft-server
 
 # Usage
-```bash
-$ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \\
--e SERVER_NAME='my server' \\\
--e WORLD_NAME='Dedicated'
--e PASSWORD='1234'
--e PUBLIC=FALSE
--e SAVE_INTERVAL=900
--e BACKUPS=4
--e BACKUP_SHORT=7200
--e BACKUP_LONG=43200
--e CROSSPLAY=FALSE
--e PRESET_DIFFICULTY=normal
--e MODIFIER_COMBAT=easy
--e MODIFIER_DEATHPENALTY=easy
--e MODIFIER_RESOURCES=less
--e MODIFIER_RAIDS=less
--e MODIFIER_PORTALS=casual
--e SETKEY=passivemobs
+Example
+```
+$ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
+-e SERVER_NAME='my server' \
+-e WORLD_NAME='my world' \
+-e PASSWORD='1234' \
+-e PUBLIC=0 \
+-e SAVE_INTERVAL=900 \
+-e BACKUPS=8 \
+-e BACKUP_SHORT=3600 \
+-e BACKUP_LONG=20000 \
+-e CROSSPLAY=0
+-e PRESET_DIFFICULTY=normal \
+-e MODIFIER_COMBAT=easy \
+-e MODIFIER_DEATHPENALTY=easy \
+-e MODIFIER_RESOURCES=less \
+-e MODIFIER_RAIDS=less \
+-e MODIFIER_PORTALS=casual \
+-e SETKEY=passivemobs \
 --name valheim localhost/vhsrv:latest
 ```
 
