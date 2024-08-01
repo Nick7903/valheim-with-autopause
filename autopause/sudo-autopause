@@ -1,1 +1,1 @@
-valheim ALL=(ALL) NOPASSWD:/usr/sbin/knockd
+valheim ALL=(ALL) NOPASSWD:/usr/bin/steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
