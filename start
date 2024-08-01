@@ -1,5 +1,5 @@
 #!/bin/bash
-umask 0023
+set -x
 
 server_args='-name '$name' -world '$world
 if [ $PASSWORD ]; then server_args+=' -password '$PASSWORD ; fi
@@ -20,6 +20,7 @@ if [ $PLAYEREVENTS ]; then server_args+=' -setkey playerevents ' ; fi
 if [ $PASSIVEMOBS ]; then server_args+=' -setkey passivemobs ' ; fi
 if [ $NOMAP ]; then server_args+=' -password nomaps ' ; fi
 
+umask 0023
 steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
 
 /autopause/autopause-daemon.sh &
