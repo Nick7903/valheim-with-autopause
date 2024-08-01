@@ -4,6 +4,7 @@ Valheim server container with autopause functionality, to save power and cpu tim
 Inspired by https://github.com/itzg/docker-minecraft-server
 
 # Usage
+```bash
 $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \\
 -e SERVER_NAME='my server' \\\
 -e WORLD_NAME='Dedicated'
@@ -22,7 +23,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \\
 -e MODIFIER_PORTALS=casual
 -e SETKEY=passivemobs
 --name valheim localhost/vhsrv:latest
-
+```
 
 | Name | Type | Default | Purpose |
 |---|---|---|---|
