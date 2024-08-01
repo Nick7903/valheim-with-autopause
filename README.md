@@ -25,7 +25,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e NOMAPS=1 \
 --name valheim localhost/vhsrv:latest
 ```
-Quadlet example
+Quadlet example  
 /etc/containers/systemd/valheim.container
 ```
 Description=Valheim Server Container
