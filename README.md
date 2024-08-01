@@ -11,7 +11,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e PUBLIC=FALSE
 -e SAVE_INTERVAL=900
 -e BACKUPS=4
--e BACKUP_SHORT=7000
+-e BACKUP_SHORT=7200
 -e BACKUP_LONG=43200
 -e CROSSPLAY=FALSE
 -e PRESET_DIFFICULTY=normal
@@ -26,16 +26,16 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 
 | Name | Type | Default | Purpose | req/opt |
 |----------|----------|-------|---|--|
-| `SERVER_NAME` | `string` | | name of server shown in server browser if public | `required` |
-| `WORLD_NAME` | `string` | 'Dedicated' | name of world | `optional` |
-| `PASSWORD` | `string` | | password to server | `optional` |
-| `PUBLIC` | `boolean` | TRUE | if set, the server will show up in server browser | `optional` |
-| `SAVE_INTERVAL` | `integer`seconds | 1800 | time between saves
-| `BACKUPS` | 
-| `BACKUP_SHORT` |   
-| `BACKUP_LONG` |   
-| `CROSSPLAY` |   
-| `PRESET_DIFFICULTY` |  
+| `SERVER_NAME` | `str` | | name of server shown in server browser if public | `required` |
+| `WORLD_NAME` | `str` | 'Dedicated' | name of world | `optional` |
+| `PASSWORD` | `str` | | password to server | `optional` |
+| `PUBLIC` | `bool` | TRUE | if set, the server will show up in server browser | `optional` |
+| `SAVE_INTERVAL` | `int` seconds | 1800 | time between saves |
+| `BACKUPS` | `int` | 4 | amount of auto backups, 1 short, 3 long |
+| `BACKUP_SHORT` | `int` seconds | 7200 | interval time for short backup |
+| `BACKUP_LONG` | `int` seconds | 43200 | interval time for long backups |
+| `CROSSPLAY` | `bool` | FALSE | if false, only steam users can join |
+| `PRESET_DIFFICULTY` | `str` from list | normal | difficulty: normal, casual, easy, hard, hardcore, immersive, hammer |
 | `MODIFIER_COMBAT` |
 | `MODIFIER_DEATHPENALTY` |   
 | `MODIFIER_RESOURCES` |   
