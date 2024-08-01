@@ -1,7 +1,9 @@
 #!/bin/bash
 umask 0023
 
-zypper -n install -l steamcmd libatomic1 libpulse-devel libpulse0 knockd
+zypper -n install -l steamcmd libatomic1 libpulse-devel libpulse0 knockd libcap-progs
+
+setcap cap_net_raw=ep /usr/sbin/knockd
 
 steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
 
