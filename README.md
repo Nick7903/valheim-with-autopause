@@ -36,9 +36,12 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 | `BACKUP_LONG` | `int` seconds | 43200 | interval time for long backups |
 | `CROSSPLAY` | `bool` | FALSE | if false, only steam users can join |
 | `PRESET_DIFFICULTY` | `str` from list | normal | difficulty: normal, casual, easy, hard, hardcore, immersive, hammer |
-| `MODIFIER_COMBAT` |
-| `MODIFIER_DEATHPENALTY` |   
-| `MODIFIER_RESOURCES` |   
-| `MODIFIER_RAIDS` |  
-| `MODIFIER_PORTALS` |
-| `SETKEY` |
+| `MODIFIER_COMBAT` | `str` from list | | combat difficulty: veryeasy, easy, hard, veryhard |
+| `MODIFIER_DEATHPENALTY` | `str` from list | | deathpenalty level: casual, veryeasy, easy, hard, hardcore |
+| `MODIFIER_RESOURCES` | `str` from list | | resource amount: muchless, less, more, muchmore, most |
+| `MODIFIER_RAIDS` | `str` from list | | raid amount: none, muchless, less, more, muchmore |
+| `MODIFIER_PORTALS` | `str` from list | | portal difficulty: casual, hard, veryhard |
+| `NOBUILDCOST` | `bool` | FALSE | disable build cost |
+| `PLAYEREVENTS` | `bool` | FALSE | idk |
+| `PASSIVEMOBS` | `bool` | FALSE | set mobs to be passive |
+| `NOMAP` | `bool` | FALSE | disable map |
