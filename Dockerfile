@@ -1,4 +1,4 @@
-FROM docker.io/opensuse/tumbleweed
+FROM docker.io/opensuse/leap
 
 WORKDIR /valheim
 
