@@ -15,7 +15,7 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 -e BACKUPS=8 \
 -e BACKUP_SHORT=3600 \
 -e BACKUP_LONG=20000 \
--e CROSSPLAY=0
+-e CROSSPLAY=0 \
 -e PRESET_DIFFICULTY=normal \
 -e MODIFIER_COMBAT=easy \
 -e MODIFIER_DEATHPENALTY=easy \
@@ -35,22 +35,22 @@ Description=Valheim Server Container
 ContainerName=valheim
 Image=localhost/vhsrv:latest
 Volume=valheim-server:/world
--e SERVER_NAME='my server' \
--e WORLD_NAME='my world' \
--e PASSWORD='1234' \
--e PUBLIC=0 \
--e SAVE_INTERVAL=900 \
--e BACKUPS=8 \
--e BACKUP_SHORT=3600 \
--e BACKUP_LONG=20000 \
--e CROSSPLAY=0
--e PRESET_DIFFICULTY=normal \
--e MODIFIER_COMBAT=easy \
--e MODIFIER_DEATHPENALTY=easy \
--e MODIFIER_RESOURCES=less \
--e MODIFIER_RAIDS=less \
--e MODIFIER_PORTALS=casual \
--e NOMAPS=1 \
+Environment=SERVER_NAME='my server'
+Environment=WORLD_NAME='my world'
+Environment=PASSWORD='1234'
+Environment=PUBLIC=0
+Environment=SAVE_INTERVAL=900
+Environment=BACKUPS=8
+Environment=BACKUP_SHORT=3600
+Environment=BACKUP_LONG=20000
+Environment=CROSSPLAY=0
+Environment=PRESET_DIFFICULTY=normal
+Environment=MODIFIER_COMBAT=easy
+Environment=MODIFIER_DEATHPENALTY=easy
+Environment=MODIFIER_RESOURCES=less
+Environment=MODIFIER_RAIDS=less
+Environment=MODIFIER_PORTALS=casual
+Environment=NOMAPS=1
 PublishPort=2456:2456/udp
 PublishPort=2457:2457/udp
 AddCapability=CAP_NET_RAW
