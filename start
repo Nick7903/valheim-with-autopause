@@ -2,7 +2,7 @@
 set -x
 
 umask 0023
-steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
+sudo steamcmd +force_install_dir /valheim +login anonymous +app_update 896660 -beta none validate +quit
 
 server_args=''
 if [ $PASSWORD ]; then server_args+=' -password '$PASSWORD ; fi
