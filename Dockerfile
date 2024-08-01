@@ -1,5 +1,6 @@
 FROM docker.io/opensuse/leap
 
+VOLUME ["/world]
 WORKDIR /valheim
 
 COPY --chown=root:root --chmod=750 ./start.sh .
