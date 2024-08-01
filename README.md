@@ -24,9 +24,9 @@ $ podman run -d -t -v valheim-world:/world -p 2456:2456/udp -p 2457:2457/udp \
 --name valheim localhost/vhsrv:latest
 
 
-| Name | Type  | Purpose | Default | req/opt |
+| Name | Type | Default | Purpose | req/opt |
 |----------|----------|-------|---|--|
-| `SERVER_NAME` | `string` | name of server shown in server browser if public | none | required |
+| `SERVER_NAME` | `string` | none | name of server shown in server browser if public | required |
 
 
 
